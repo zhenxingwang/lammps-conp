@@ -55,7 +55,7 @@ Current version is compatible with 11Apr14 or later version of LAMMPS. Also some
 * **RESPA** is not supported
 * **fix npt** is not supported
 * **Newton** must be **off**
-* **Unit** must be **real**. As so the unit of **η** is angstrom<sup>-1</sup>. For example, as in our work η = 19.79 nm<sup>-1</sup>, the actual value of **η** in input is 1.979
+* **Unit** must be **real**. As so the unit of **η** is angstrom<sup>-1</sup>. For example, as in our work it is 19.79 nm<sup>-1</sup>, the actual value of **η** in command is 1.979
 * Electrodes need to be frozen (set the force on electrode atoms to 0 and exclude electrode atoms from integration)
 * The simulation cell must be symmetric with respect to z=0 plane
 *Two electrodes must be assigned equal but opposite potentials. For example, for a 5V potential difference, the potential on lower electrode should be -2.5V and on upper electrode should be 2.5V
