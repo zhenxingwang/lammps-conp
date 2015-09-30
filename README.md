@@ -53,7 +53,7 @@ Current version is compatible with 11Apr14 or later version of LAMMPS. Also some
 
 * Only pair style **lj_cut_coul_long** is supported
 * **RESPA** is not supported
-* **fix npt** is not supported
+* **Fix npt** is not supported
 * **Newton** must be **off**
 * **Unit** must be **real**. As so the unit of **η** is angstrom<sup>-1</sup>. For example, as in our work it is 19.79 nm<sup>-1</sup>, the actual value of **η** in command is 1.979
 * Electrodes need to be frozen (set the force on electrode atoms to 0 and exclude electrode atoms from integration)
