@@ -161,7 +161,7 @@ void FixConp::setup(int vflag)
   qsqsum = tmp;
   q2 = qsqsum * force->qqrd2e / force->dielectric;
 
-//  from ewald.cpp
+// Copied from ewald.cpp
   double xprd = domain->xprd;
   double yprd = domain->yprd;
   double zprd = domain->zprd;
@@ -216,7 +216,7 @@ void FixConp::setup(int vflag)
   coeffs();
   kmax_created = kmax;
 
-//from ewald.cpp end
+//copied from ewald.cpp end
 
   int nmax = atom->nmax;
   double evscale = 0.069447;
