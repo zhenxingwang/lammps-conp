@@ -31,16 +31,20 @@ fix [ID] all conp [Nevery] [η] [Molecule-ID 1] [Molecule-ID 2] [Potential 1] [P
 
 **Nevery** = Compute charge every this many steps (set to 1 for current version)
 
-**η** = Parameter for Gaussian charge (example: for η = 19.79 nm<sup>-1</sup> as in our paper, it is 1.979 if **units** is **real**)
+**η** = Parameter for Gaussian charge
 
 **Molecule-ID 1** = Molecule ID of first electrode (the second column in data file)
 
 **Molecule-ID 2** = Molecule ID of second electrode
 
 **Potential 1** = Potential on first electrode (unit: V)
+
 **Potential 2** = Potential on second electrode
+
 **Method** = Method for solving linear equations. "inv" for inverse matrix and "cg" for conjugate gradient
+
 **Log** = Name of log file recording time usage of different parts
+
 **Matrix** = Optional argument. File name of A matrix to read in. If it is assigned, A matrix is read in instead of calculation
 
 #Note
@@ -51,7 +55,7 @@ Current version is compatible with 11Apr14 or later version of LAMMPS. Also some
 * **RESPA** is not supported
 * **fix npt** is not supported
 * **Newton** must be **off**
-* **Unit** must be **real**
+* **Unit** must be **real**. As so the unit of **η** is angstrom<sup>-1</sup>. For example, as in our work η = 19.79 nm<sup>-1</sup>, the actual value of **η** in input is 1.979
 * Electrodes need to be frozen (set the force on electrode atoms to 0 and exclude electrode atoms from integration)
 * The simulation cell must be symmetric with respect to z=0 plane
 *Two electrodes must be assigned equal but opposite potentials. For example, for a 5V potential difference, the potential on lower electrode should be -2.5V and on upper electrode should be 2.5V
