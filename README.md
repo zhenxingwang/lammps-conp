@@ -10,8 +10,7 @@ Z. Wang, Y. Yang, D. L. Olmsted, M. Asta and B. B. Laird, J. Chem. Phys. 141, 18
 
 #Installation
 
-1. Download the zip file through the following link and unzip it to [LAMMPS home directory]/src/
-https://drive.google.com/file/d/0B_21kvqJoPwEbC14S0dDVzBQdmc/edit?usp=sharing (updated 4/1/2014)
+1. Download **fix_conp.cpp** and **fix_conp.h** to [LAMMPS home directory]/src/
 
 2. If using gnu compiler, download and compile LAPACK. Note BLAS within LAPACK package needs to be compiled first.
 http://www.netlib.org/lapack/
