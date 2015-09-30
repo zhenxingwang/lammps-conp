@@ -50,6 +50,7 @@ fix [ID] all conp [Nevery] [η] [Molecule-ID 1] [Molecule-ID 2] [Potential 1] [P
 
 Current version is compatible with 11Apr14 or later version of LAMMPS. Also some limitations exist and certain settings are required.
 
+* Only simulation with two electrodes is supported
 * Only pair style **lj_cut_coul_long** is supported
 * **RESPA** is not supported
 * **Fix npt** is not supported
