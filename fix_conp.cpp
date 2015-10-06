@@ -442,7 +442,7 @@ void FixConp::a_read()
   int i = 0;
   int idx1d;
   if (me == 0) {
-    int maxchar = 13*elenum_all+1;
+    int maxchar = 21*elenum_all+1;
     char line[maxchar];
     char *word;
     while(fgets(line,maxchar,a_matrix_fp) != NULL) {
