@@ -30,7 +30,7 @@ fix [ID] all conp [Nevery] [η] [Molecule-ID 1] [Molecule-ID 2] [Potential 1] [P
 
 **Nevery** = Compute charge every this many steps (set to 1 for current version)
 
-**η** = Parameter for Gaussian charge
+**η** = Parameter for Gaussian charge. The unit is is angstrom<sup>-1</sup> (see note below)
 
 **Molecule-ID 1** = Molecule ID of first electrode (the second column in data file)
 
