@@ -60,6 +60,9 @@ Current version is compatible with 11Apr14 or later version of LAMMPS. Also some
 * The simulation cell must be symmetric with respect to z=0 plane
 * Two electrodes must be assigned equal but opposite potentials. For example, for a 5V potential difference, the potential on lower electrode should be -2.5V and on upper electrode should be 2.5V
 
+#Example input file
+The example files are for a system of acetonitrile between two graphite electrodes with potential difference as 1V. Acetonitrile is described by a united atom model (in example data file, CH<sub>3</sub>, C and N are named as CAC, CAB and NAA respectively). Inital charge on carbon in electrodes is zero (carbon is named as CG in example data file). The references of parameters can be found in our paper.
+
 #Reference
 [1] S. K. Reed, O. J. Lanning, and P. A. Madden, J. Chem. Phys. 126, 084704 (2007).
 
