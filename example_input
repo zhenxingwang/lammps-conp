@@ -1,0 +1,45 @@
+units               real    
+dimension           3   
+newton              off 
+#processors         * * *
+boundary            p p f 
+atom_style          full 
+
+##force field
+pair_style          lj/cut/coul/long 4.0
+bond_style          harmonic
+angle_style         harmonic
+kspace_style        pppm 1.0e-6
+kspace_modify       slab 3.0
+
+##atom definition
+read_data           example_datafile
+pair_coeff   1   1         0.09935850       3.40000000  # CAB CAB
+pair_coeff   1   2         0.19419428       3.50000000  # CAB CAC
+pair_coeff   1   3         0.07390356       3.38500000  # CAB CG
+pair_coeff   1   4         0.09935850       3.35000000  # CAB NAA
+pair_coeff   2   2         0.37954900       3.60000000  # CAC CAC
+pair_coeff   2   3         0.14444310       3.48500000  # CAC CG
+pair_coeff   2   4         0.19419428       3.45000000  # CAC NAA
+pair_coeff   3   3         0.05497000       3.37000000  # CG CG
+pair_coeff   3   4         0.07390356       3.33500000  # CG NAA
+pair_coeff   4   4         0.09935850       3.30000000  # NAA NAA
+
+##setting
+neighbor            2 bin
+group ele type 3
+group sol type 1 2 4
+thermo_style        multi
+thermo              1000
+restart 100000 restart
+dump 1 ele custom 500 ele id q
+dump_modify 1 sort id
+dump 2 all dcd 500 lmp.dcd
+##run
+run_style           verlet
+timestep            1  
+velocity ele set 0.0 0.0 0.0
+fix 0 ele setforce 0.0 0.0 0.0
+fix e all conp 1 1.979 81 82 -0.5 0.5 inv iter
+fix 1 sol nvt temp 298.0 298.0 100.0
+run 500000
