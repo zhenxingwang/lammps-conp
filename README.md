@@ -1,3 +1,5 @@
+
+====
 #Introduction
 
 Constant potential method is an approach to describe charges on electrode atoms in Molecular Dynamics(MD) simulations of Electric Double-Layer Capacitors(EDLCs). The advantage is to take into account the charge fluctuations on the electrode induced by local density fluctuations in the electrolyte solution. This method was developed by Reed et al.<sup>[1]</sup> and some derivation was corrected by Gingrich and Wilson<sup>[2]</sup> later.
