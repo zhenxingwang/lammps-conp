@@ -19,6 +19,52 @@ http://www.netlib.org/lapack/
 
 4. Compile LAMMPS as usual.
 
+## Compiling with LAPACK and MPI
+### Prerequisite 
+- LAPACK
+- MPI
+### Installing
+Download lammps and the constant potential part from github: 
+```
+git clone https://github.com/lammps/lammps.git 
+git clone https://github.com/zhenxingwang/lammps-conp.git
+```
+Copy **fix_conp.cpp** and **fix_conp.h** from lammps-conp to lammps source folder:
+```
+cd lammps-conp
+cp fix_conp.cpp fix_conp.h ../lammps/src/
+```
+Modify Makefile file, Lapack library need to be linked.
+```
+cd src/
+nano MAKE/Makefile.mpi
+```
+> LIB = -lblas -llapack
+
+Install essential packages for lammps-conp:
+```
+make yes-kspace yes-rigid yes-molecule
+```
+Compiling 
+```
+make clean-all
+make mpi
+```
+The lmp_mpi file would be created if compiling successfully.
+### Running example test
+The author's example_input requires up to 4 hours for running on my computer (4cores @2.5GHz), I created a smalller test named in.small_test (completed in 5 mins) and used it in this guide.
+
+Copy execute file from src/ directory:
+```
+cp lmp_mpi ../../lammps-conp
+cd ../../lammps-conp
+```
+Running lammps with mpi for small test
+```
+mpirun -np 4 ./lmp_mpi -in in.small_test
+```
+The output file can be visualized by VMD.
+
 # Syntax
 This method is turned on through a FIX command
 
