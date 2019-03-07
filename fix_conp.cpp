@@ -901,7 +901,7 @@ void FixConp::cg()
       res[i] = res[i]-d*ap[i];
       resnorm += res[i]*res[i];
     }
-    if (resnorm/elenum_all < tolarence) {
+    if (resnorm/elenum_all < tolerance) {
       netcharge = 0.0;
       for (i = 0; i < elenum_all; ++i) netcharge += eleallq[i];
       if (me == 0) {
