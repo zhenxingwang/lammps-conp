@@ -62,7 +62,7 @@ class FixConp : public Fix {
   double vL,vR;
   int molidL,molidR;
   int maxiter;
-  double tolarence;
+  double tolerance;
 
   double rms(int,double,bigint,double);
   void coeffs();
