@@ -66,13 +66,13 @@ FixConp::FixConp(LAMMPS *lmp, int narg, char **arg) :
 {
   if (narg < 11) error->all(FLERR,"Illegal fix conp command");
   maxiter = 100;
-  tolarence = 0.000001;
-  everynum = force->numeric(FLERR,arg[3]);
-  eta = force->numeric(FLERR,arg[4]);
-  molidL = force->inumeric(FLERR,arg[5]);
-  molidR = force->inumeric(FLERR,arg[6]);
-  vL = force->numeric(FLERR,arg[7]);
-  vR = force->numeric(FLERR,arg[8]);
+  tolerance = 0.000001;
+  everynum = utils->numeric(FLERR,arg[3],false,lmp);
+  eta = utils->numeric(FLERR,arg[4],false,lmp);
+  molidL = utils->inumeric(FLERR,arg[5],false,lmp);
+  molidR = utils->inumeric(FLERR,arg[6],false,lmp);
+  vL = utils->numeric(FLERR,arg[7],false,lmp);
+  vR = utils->numeric(FLERR,arg[8],false,lmp);
   if (strcmp(arg[9],"cg") == 0) {
     minimizer = 0;
   } else if (strcmp(arg[9],"inv") == 0) {
